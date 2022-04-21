@@ -6,12 +6,12 @@
 #    By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 12:52:38 by hcremers          #+#    #+#              #
-#    Updated: 2022/04/21 16:37:32 by hcremers         ###   ########.fr        #
+#    Updated: 2022/04/21 17:39:25 by hcremers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= philo
-DIRCPY	= \[07\]Philosophers
+DIRCPY	= \[08\]Philosophers
 
 SRC		= $(wildcard *.c)
 
