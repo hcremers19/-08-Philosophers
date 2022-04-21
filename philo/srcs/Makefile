@@ -6,7 +6,7 @@
 #    By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 16:55:17 by hcremers          #+#    #+#              #
-#    Updated: 2022/03/28 14:49:11 by hcremers         ###   ########.fr        #
+#    Updated: 2022/04/21 16:36:36 by hcremers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CC		= gcc
 RM		= rm -f
 MKDIR	= mkdir
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -pthread
 
 ###############################################################################
 

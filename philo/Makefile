@@ -6,7 +6,7 @@
 #    By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/17 12:52:38 by hcremers          #+#    #+#              #
-#    Updated: 2022/04/20 15:06:16 by hcremers         ###   ########.fr        #
+#    Updated: 2022/04/21 16:37:32 by hcremers         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIB		= srcs/libsrcs.a
 
 DISTANT	= /Volumes/Clémentine/19/
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -pthread
 
 CC		= gcc
 RM		= rm -f

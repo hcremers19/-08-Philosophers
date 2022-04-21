@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:55:23 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/21 13:40:00 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:38:43 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*live(t_philo *philo)
 {
 	pthread_mutex_init(&philo->struc->forks[philo->id], NULL);
 	if (philo->id % 2)
-		powernap(500);
+		powernap(5000);
 	while (philo->struc->is_everybody_alive)
 	{
 		pthread_mutex_lock(&philo->struc->forks[philo->id]);
@@ -27,8 +27,8 @@ void	*live(t_philo *philo)
 		smart_printer(philo->id, "is eating", philo->struc);
 		if (philo->struc->max_meals > 0)
 			philo->struc->max_meals--;
-		powernap(philo->struc->tte);
 		philo->last_meal = a_time();
+		powernap(philo->struc->tte);
 		pthread_mutex_unlock(&philo->struc->forks[philo->id]);
 		pthread_mutex_unlock(&philo->struc->forks[(philo->id + 1)
 			% philo->struc->guests]);
