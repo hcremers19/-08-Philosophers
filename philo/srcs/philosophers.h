@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:56:14 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/25 14:35:40 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:48:06 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <limits.h>
-# include "../../.wraloc/wraloc.h"
+// # include "../../.wraloc/wraloc.h"
 
 typedef struct s_philo
 {
