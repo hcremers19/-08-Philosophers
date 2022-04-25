@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:55:23 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/21 15:38:43 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/04/22 14:26:51 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	init_struc(int argc, char **argv, t_data *struc)
 		return ;
 	struc->forks
 		= (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * struc->guests);
-	if (!struc->philo)
+	if (!struc->forks)
 		return ;
 }
 

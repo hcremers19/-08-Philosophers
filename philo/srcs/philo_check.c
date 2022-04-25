@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:08:17 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/22 11:08:43 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:00:53 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,15 @@ int	check_args(int argc, char **argv)
 
 int	recheck_args(t_data *struc)
 {
+	int	min_time;
+	int	max_time;
+
+	min_time = 60 * 1000;
+	max_time = 60000 * 1000;
 	if (struc->guests < 1 || 250 < struc->guests
-		|| struc->tte < 60 || 60000 < struc->tte
-		|| struc->tts < 60 || 60000 < struc->tts
-		|| struc->ttd < 60 || 60000 < struc->ttd
+		|| struc->tte < min_time || max_time < struc->tte
+		|| struc->tts < min_time || max_time < struc->tts
+		|| struc->ttd < min_time || max_time < struc->ttd
 		|| struc->max_meals < -1 || struc->error)
 	{
 		ft_putstr_fd("Error: invalid argument(s)\n", 2);
