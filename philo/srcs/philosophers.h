@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:56:14 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/25 14:48:06 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:01:33 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <limits.h>
-// # include "../../.wraloc/wraloc.h"
 
 typedef struct s_philo
 {
@@ -54,8 +53,8 @@ long long				r_time(t_data *struc);
 void					powernap(long long naptime);
 void					smart_printer(int id, char *string, t_data *struc);
 void					*live(t_philo *philo);
-void					init_struc(int argc, char **argv, t_data *struc);
-void					init_philos(t_data *struc);
+int						init_struc(int argc, char **argv, t_data *struc);
+int						init_philos(t_data *struc);
 void					end_threads(t_data *struc);
 
 /* libft */

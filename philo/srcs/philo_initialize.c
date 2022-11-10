@@ -6,7 +6,7 @@
 /*   By: hcremers <hcremers@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:55:23 by hcremers          #+#    #+#             */
-/*   Updated: 2022/04/22 14:26:51 by hcremers         ###   ########.fr       */
+/*   Updated: 2022/11/10 11:59:24 by hcremers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	init_struc_2(char **argv, t_data *struc)
 	pthread_mutex_init(&struc->freedom_of_speech, NULL);
 }
 
-void	init_struc(int argc, char **argv, t_data *struc)
+int	init_struc(int argc, char **argv, t_data *struc)
 {
 	int	temp;
 
@@ -68,14 +68,15 @@ void	init_struc(int argc, char **argv, t_data *struc)
 		struc->max_meals = -1;
 	struc->philo = (t_philo **)malloc(sizeof(t_philo *) * struc->guests);
 	if (!struc->philo)
-		return ;
+		return (1);
 	struc->forks
 		= (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * struc->guests);
 	if (!struc->forks)
-		return ;
+		return (1);
+	return (0);
 }
 
-void	init_philos(t_data *struc)
+int	init_philos(t_data *struc)
 {
 	int	i;
 
@@ -83,6 +84,8 @@ void	init_philos(t_data *struc)
 	while (i < struc->guests)
 	{
 		struc->philo[i] = (t_philo *)malloc(sizeof(t_philo));
+		if (!struc->philo[i])
+			return (1);
 		struc->philo[i]->struc = struc;
 		struc->philo[i]->id = i;
 		struc->philo[i]->last_meal = a_time();
@@ -90,4 +93,5 @@ void	init_philos(t_data *struc)
 			NULL, (void *)&live, struc->philo[i]);
 		i++;
 	}
+	return (0);
 }
